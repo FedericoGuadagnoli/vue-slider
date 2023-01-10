@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.global.js" integrity="sha512-boEFRnFthrf+bNt2FkCFAjd809yT4B9R5Kr1eTROVLdzT79sgQanuKUhu/R7eDHmWL8IcjHIkxjdEVvvP6DLMA==" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous'/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Carosello con Array di Oggetti</title>
+</head>
+<body>
+    <div class="container" id="root">
+        <div id="carousel">
+            <i @click="goToPrev" class="fa-solid fa-circle-arrow-up" id="prev"></i>
+            <div class="gallery">
+                <figure v-for="(game, i) in games" v-show=" i === currentIndex">
+                    <img :src="game.image" :alt="game.title">
+                    <div class="description">
+                         <h1>{{game.title}}</h1>
+                         <p>{{game.text}}</p>
+                    </div>
+                </figure>
+            </div>
+            <i @click="goToNext" class="fa-solid fa-circle-arrow-down" id="next"></i>
+            <div id="thumbnails">
+                <img v-for ="(game, i) in games" :src="game.image" :alt="game.title" :class="{'active': i === currentIndex}">
+                <!-- <img src="img/01.webp" alt="" class="active">
+                <img src="img/02.webp" alt="">
+                <img src="img/03.webp" alt="">
+                <img src="img/04.webp" alt="">
+                <img src="img/05.webp" alt=""> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

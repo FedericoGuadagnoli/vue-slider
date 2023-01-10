@@ -25,7 +25,7 @@
             </div>
             <i @click="goToNext" class="fa-solid fa-circle-arrow-down" id="next"></i>
             <div id="thumbnails">
-                <img v-for ="(game, i) in games" :src="game.image" :key="i" :alt="game.title" :class="{'active': i === currentIndex}" @click ="currentIndex = i" @mouseover = "clearInterval" >
+                <img v-for ="(game, i) in games" :src="game.image" :key="i" :alt="game.title" :class="{'active': i === currentIndex}" @click ="currentIndex = i" @mouseover ="stopAutoplay">
                 <!-- <img src="img/01.webp" alt="" class="active">
                 <img src="img/02.webp" alt="">
                 <img src="img/03.webp" alt="">

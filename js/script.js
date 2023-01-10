@@ -52,7 +52,9 @@
        
       },
 
-      
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+      }, 
     }
   });
 

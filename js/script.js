@@ -44,7 +44,8 @@
       goToPrev(){
         this.currentIndex > 0 ? this.currentIndex-- : this.currentIndex = this.games.length - 1;
        
-      }
+      },
+    
     }
   });
 
